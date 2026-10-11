@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Progress from "./Progress";
 const STEPS = ["Cart", "Payment", "Done"];
 
 const STARTING_CART = [
@@ -19,7 +19,7 @@ export default function App(){
   return (
     <main className="checkout">
       <h1 className="brand">Wick &amp; Co.</h1>
-      <p>Step {step+1} of {STEPS.length}: {STEPS[step]}</p>
+      <Progress steps={STEPS} current={step} />
 
       {step === 0 && <p>Cart goes here</p>}
       {step ===1 && <p>Details form go here</p>}
